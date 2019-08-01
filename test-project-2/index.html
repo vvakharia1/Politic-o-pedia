@@ -8,10 +8,9 @@
         <!-- Bootstrap Link -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
         <link rel="stylesheet" href="assets/style.css">
         <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 </head>
 <body class="main">
 
@@ -31,10 +30,10 @@
                             <a class="nav-link ks-nav " href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ks-nav" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
+                            <a class="nav-link ks-nav" href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ks-nav" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
+                            <a class="nav-link ks-nav" href="#">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -48,58 +47,62 @@
                     </section>
                 </div>
             </div>
-            <div class="row">
                 <!-- Signup Form -->
+            <div class="row" id="login-box">
                 <div class="col-md-4 border mx-auto text-center ks-container ">
                     <div class=" fadeInDown">
                         <div id="formContent" class="p-4">
-                            <!-- Tabs Titles -->
-                            <!-- Icon -->
                             <div class="m-2 mt-2">
                                 <i class="far fa-user fa-3x"></i>
                             </div>
                             <form>
                                 <div class="form-group">
-                                    <label for="username">Email</label>
+                                    <label for="username"></label>
                                     <input type="text" class="mx-auto m-2 onNewLine" id="inputUsername"
-                                        placeholder="email@gmail.com">
+                                        placeholder="Username">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password</label>
+                                    <label for="password"></label>
                                     <input type="password" class="mx-auto m-2 onNewLine" id="inputPassword"
                                         placeholder="Password">
                                 </div>
                                 <p id="signUpMessage"></p>
-                                <button type="login" class="mx-auto ks-button" id="signup" value="signup">Sign up!</button>
+                                <button type="login" class="mx-auto ks-button" id="login" value="login">Login</button>
                             </form>
-                        </div>
-                    </div>
-                </div>
-                    <!-- Login Form -->
-                    <div class="col-md-4 border mx-auto text-center ks-container ">
-                        <div class="fadeInDown">
-                            <div id="formContent" class="p-4">
-                                <!-- Tabs Titles -->
-                                <!-- Icon -->
-                                <div class="m-2 mt-2">
-                                    <i class="far fa-user fa-3x"></i>
-                                </div>
-
-                                <form>
-                                    <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input type="text" class="mx-auto m-2 onNewLine" id="loginUsername" placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="mx-auto m-2 onNewLine" id="loginPassword" placeholder="Password">
-                                    </div>
-                                    <button type="login" class="mx-auto ks-button" id="login" value="login">Sign in</button>
-                                </form>
+                            <div class="justify-content-center">
+                                <p>Don't have an account?</p>
+                                <a id="signup" href="#">Sign Up</a>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
+                    <div class="row" id="register-box">
+                        <div class="col-md-4 border mx-auto text-center ks-container ">
+                            <div class=" fadeInDown">
+                                <div id="formContent" class="p-4">
+                                    <div class="m-2 mt-2">
+                                        <i class="far fa-user fa-3x"></i>
+                                    </div>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="username"></label>
+                                            <input type="text" class="mx-auto m-2 onNewLine" id="register-username" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password"></label>
+                                            <input type="password" class="mx-auto m-2 onNewLine" id="register-password" placeholder="Password">
+                                        </div>
+                                        <p id="signUpMessage"></p>
+                                        <button type="login" class="mx-auto ks-button" id="register" value="login">Register</button>
+                                    </form>
+                                    <div class="justify-content-center">
+                                        <p>Already have an account?</p> <a id="go-back-login" href="#">Login</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </div>
         <!-- Footer -->
         <footer class=" text-center mt-auto">
@@ -107,4 +110,21 @@
             </div>
         </footer>
 </body>
+
+<script>
+$("#register-box").hide()
+    $("#signup").on("click", function (event) {
+        event.preventDefault();
+    //    console.log("you clicked me")
+        $("#login-box").hide()
+        $("#register-box").show()
+    })
+
+$("#go-back-login").on("click", function (event) {
+    event.preventDefault();
+    console.log("you clicked me")
+    $("#register-box").hide()
+    $("#login-box").show()
+})
+</script>
 </html>
