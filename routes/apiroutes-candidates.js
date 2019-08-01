@@ -1,0 +1,1 @@
+// candidates information (nested objects)
