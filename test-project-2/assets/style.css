@@ -185,3 +185,16 @@ a:hover {
 }
 
 
+
+/*--Candidates page--*/
+
+.image {
+    width: 350px;
+    height: auto;
+    float: left;
+
+}
+.table {
+    float: right;
+    width: 50%;
+}
