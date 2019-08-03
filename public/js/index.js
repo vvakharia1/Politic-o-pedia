@@ -97,3 +97,19 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
+
+// For Login and Registration Box
+$("#register-box").hide()
+$("#signup").on("click", function (event) {
+  event.preventDefault();
+  $("#login-box").hide()
+  $("#register-box").show()
+})
+
+$("#go-back-login").on("click", function (event) {
+  event.preventDefault();
+  $("#register-box").hide()
+  $("#login-box").show()
+})
