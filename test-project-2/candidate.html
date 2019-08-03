@@ -9,7 +9,7 @@
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
     <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 </head>
@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-md-12 border ks-container m-4">
                     <section class="p-4">
-                       <section><img class="image pb-4 pr-4" src="assets/President-Trump-Official-Portrait.jpg">
+                       <section><img class="image pb-4 pr-4" src="assets/images/President-Trump-Official-Portrait.jpg">
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -59,6 +59,14 @@
                                 <tr>
                                     <th scope="row">Political Party:</th>
                                     <td>Republican{{this.party}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Offical Website:</th>
+                                    <td>https://www.donaldjtrump.com/{{this.website}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Current Held Office/Occupation:</th>
+                                    <td>President{{this.occupation}}</td>
                                 </tr>
                             </tbody>
                         </table>
