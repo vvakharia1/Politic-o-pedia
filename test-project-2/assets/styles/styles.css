@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background: url("navy_blueKs2.png");
+    background: url("../images/navy_blueKs2.png");
     margin-bottom: 40px;
     /*for sticky footer */
     color: #212121;
@@ -28,7 +28,7 @@ body {
 /* Fonts */
 @font-face {
     font-family: 'Declaration'; /*a name to be used later*/
-    src: url('USDeclaration.ttf'); /*URL to font*/
+    src: url('../USDeclaration.ttf'); /*URL to font*/
 }
 .h-font {
     font-family: 'EB Garamond', serif;
