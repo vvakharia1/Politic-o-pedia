@@ -189,6 +189,10 @@ a:hover {
     color: rgb(13, 16, 156);
 }
 
+.loading-image {
+    display:block;
+    margin: 0 auto;
+    }
 
 
 /*--Candidates page--*/
