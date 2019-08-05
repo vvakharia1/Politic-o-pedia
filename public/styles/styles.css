@@ -1,3 +1,8 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+
 /* General Styles Start */
 
 /*-----------------------*/
@@ -36,8 +41,8 @@ body {
 .title-font {
     font-family: 'Declaration', serif;
     font-size: .5rem;
-    line-height: .5;
-    padding-top: 1.2rem;
+    line-height: 1;
+    padding-top: 1.5rem;
 }
 
 /*Navigation Bar*/
@@ -71,7 +76,7 @@ body {
     overflow: hidden;
     padding: 0px 25px;
 /*     background-color: rgba(255, 255, 255, .7); */
-/*    background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(20, 105, 233, 0.7),rgba(240, 25, 25, 0.7)); */
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(20, 105, 233, 0.7),rgba(240, 25, 25, 0.7));
     position: fixed;
     /* Set the navbar to fixed position */
     top: 0;
@@ -80,28 +85,6 @@ body {
     /* Full width */
     z-index: 1;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-
-    background: linear-gradient(270deg, rgba(255, 255, 255, .7),  rgba(20, 105, 233, 0.7),rgba(240, 25, 25, 0.7));
-background-size: 600% 600%;
-
--webkit-animation: AnimationName 30s ease infinite;
--moz-animation: AnimationName 30s ease infinite;
-animation: AnimationName 30s ease infinite;
-}
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes AnimationName { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
 }
 
 /*Footer*/
@@ -206,11 +189,12 @@ a:hover {
     color: rgb(13, 16, 156);
 }
 
-/*-Index-*/
 .loading-image {
-    display: block;
+    display:block;
     margin: 0 auto;
-}
+    }
+
+
 /*--Candidates page--*/
 
 .image {
@@ -219,7 +203,7 @@ a:hover {
     float: left;
 
 }
-.table-candidates {
+.table {
     float: left;
     width: 50%;
 }

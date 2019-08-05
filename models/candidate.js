@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
       birthDate: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATE,
         allowNull: false
       },
       birthLocation: {
@@ -27,20 +27,8 @@ module.exports = function(sequelize, DataTypes) {
       occupation: {
         type: DataTypes.STRING,
         allowNull: false
-      },
-      image: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      createdAt: {
-        type: DataTypes.DATE,
-        field: 'beginTime',
-        defaultValue: sequelize.literal('NOW()')
-      },
-      updatedAt: {
-        type: DataTypes.DATE(3),
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
-      },
+      } 
     });
     return Candidate;
   };
+  
