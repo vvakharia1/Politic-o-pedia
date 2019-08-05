@@ -3,5 +3,3 @@ CREATE DATABASE politicdb;
 
 USE politicdb;
 ​
-
-
