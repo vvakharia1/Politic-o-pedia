@@ -98,8 +98,6 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-
-
 // For Login and Registration Box
 $("#register-box").hide()
 $("#signup").on("click", function (event) {
@@ -112,4 +110,22 @@ $("#go-back-login").on("click", function (event) {
   event.preventDefault();
   $("#register-box").hide()
   $("#login-box").show()
-})
+});
+// For Candidates Page
+
+$("#republican-list").hide();
+$("#democrat-list").hide();
+
+$("#democrat-button").on("click", function (event) {
+  event.preventDefault();
+  $("#democrat-button").hide();
+  $("#republican-button").hide();
+  $("#democrat-list").show();
+});
+
+$("#republican-button").on("click", function (event) {
+  event.preventDefault();
+  $("#democrat-button").hide();
+  $("#republican-button").hide();
+  $("#republican-list").show();
+});

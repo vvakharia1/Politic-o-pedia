@@ -26,10 +26,21 @@
             </div>
         </nav>
     </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 m-4">
+                    <section class="p-4 partyIcons">
+                        <i class="fas fa-democrat fa-10x mr-4" id="democrat-button"></i>
+                        <i class="fas fa-republican fa-10x ml-4" id="republican-button"></i>
+                    </section>
+                </div>
+            </div>
+        </div>
 
-    <section class="container ">
-        <!--Each candidate card-->
+    <!--Each Republican candidate card-->
+    <section class="container" id="republican-list">
         {{#each Candidates}}
+        {{#if isRepublican}}
         <div class="row">
             <div class="col-md-12 border ks-container m-4">
                 <section class="p-4">
@@ -73,6 +84,62 @@
                 
             </div>
         </div>
+        {{/if}}
         {{/each}}
     </section>
+    <!--Each Democrat candidate card-->
+    <section class="container" id="democrat-list">
+        {{#each Candidates}}
+        {{#unless isRepublican}}
+        <div class="row">
+            <div class="col-md-12 border ks-container m-4">
+                <section class="p-4">
+    
+                    <section><img class="image pb-4 pr-4" src={{image}}>
+                        <table class="table table-candidates">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name:</th>
+                                    <td>{{fullName}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Birthdate:</th>
+                                    <td>{{birthDate}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Birth Location:</th>
+                                    <td>{{birthLocation}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Current Location:</th>
+                                    <td>{{currentLocation}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Political Party:</th>
+                                    <td>{{politicalParty}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Offical Website:</th>
+                                    <td><a href={{website}}>{{website}}</a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Current Held Office/Occupation:</th>
+                                    <td>{{occupation}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                    </section>
+                </section>
+    
+            </div>
+        </div>
+        {{/unless}}
+        {{/each}}
+    </section>
+    <!-- Footer -->
+    <footer class=" text-center mt-auto">
+        <div class="h-font footerText">© 2019 Politopedia
+        </div>
+    </footer>
 </body>

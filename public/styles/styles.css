@@ -207,3 +207,8 @@ a:hover {
     float: left;
     width: 50%;
 }
+.partyIcons {
+    color: white;
+    margin: auto;
+    text-align:center;
+}

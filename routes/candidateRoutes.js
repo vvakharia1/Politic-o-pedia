@@ -8,7 +8,6 @@ module.exports = function (app) {
             console.log(dbCandidates);
         });
     });
-
     // Create a new Candidates
 
     /* app.post("/api/Candidates", function (req, res) {
