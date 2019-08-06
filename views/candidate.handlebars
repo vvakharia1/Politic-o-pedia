@@ -1,0 +1,67 @@
+
+<body class="main">
+
+    <!-- Navigation Bar -->
+    <header class="">
+        <nav class="navbar navbar-expand-md h-font navbar-light ">
+            <div class="navbar-brand title-font">
+                <h1>Politic-O-Pedia</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class=" navbar-nav ml-auto nav-font">
+                    <li class="nav-item active ">
+                        <a class="nav-link ks-nav " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ks-nav" href="#">Search Candidates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ks-nav" href="#logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="container ">
+        <div class="row">
+            <div class="col-md-12 border ks-container m-4">
+                <section class="p-4">
+                    <section><img class="image pb-4 pr-4" src="assets/images/President-Trump-Official-Portrait.jpg">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name:</th>
+                                    <td>{{candidate}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Birthdate:</th>
+                                    <td>{{Candidates.birthdate}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Birth Location:</th>
+                                    <td>{{Candidates.birthLocation}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Political Party:</th>
+                                    <td>{{Candidates.party}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Offical Website:</th>
+                                    <td>{{Candidates.website}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Current Held Office/Occupation:</th>
+                                    <td>{{Candidates.occupation}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
