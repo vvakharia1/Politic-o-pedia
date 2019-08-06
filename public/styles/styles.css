@@ -218,14 +218,14 @@ a:hover {
 /*--Candidates page--*/
 
 .image {
-    width: 350px;
+    width: 250px;
     height: auto;
     float: left;
 
 }
 .table {
     float: left;
-    width: 50%;
+    width: 60%;
 }
 .partyIcons {
     color: white;
