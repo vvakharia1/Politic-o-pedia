@@ -98,6 +98,34 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
+//For Login
+/* $("#register").on("click", function (event) {
+  event.preventDefault();
+
+    username= $("#login-username").val().trim(),
+    password= $("#login-password").val().trim(),
+
+}); */
+//For Registering
+/* function checkEmpty(x) {
+  if (x.length === 0) {
+    console.log("enter something!");
+    return true;
+    };
+}; */
+$("#register").on("click", function(event) {
+  event.preventDefault();
+  username = $("#register-username").val().trim();
+  password = $("#register-password").val().trim();
+  if (username.length === 0) {
+    console.log("enter something!");
+  }
+  if (username.length > 0) {
+    window.location.href = "/survey";
+    console.log("redirecting...");
+  }
+});
+
 // For Login and Registration Box
 $("#register-box").hide();
 $("#signup").on("click", function(event) {

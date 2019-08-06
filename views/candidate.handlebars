@@ -26,36 +26,42 @@
             </div>
         </nav>
     </header>
-    <section class="container ">
+    <section class="container">
+        {{#each Candidates}}
         <div class="row">
             <div class="col-md-12 border ks-container m-4">
                 <section class="p-4">
-                    <section><img class="image pb-4 pr-4" src="assets/images/President-Trump-Official-Portrait.jpg">
-                        <table class="table">
+    
+                    <section><img class="image pb-4 pr-4" src={{image}}>
+                        <table class="table table-candidates">
                             <tbody>
                                 <tr>
                                     <th scope="row">Name:</th>
-                                    <td>{{candidate}}</td>
+                                    <td>{{fullName}}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Birthdate:</th>
-                                    <td>{{Candidates.birthdate}}</td>
+                                    <td>{{birthDate}}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Birth Location:</th>
-                                    <td>{{Candidates.birthLocation}}</td>
+                                    <td>{{birthLocation}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Current Location:</th>
+                                    <td>{{currentLocation}}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Political Party:</th>
-                                    <td>{{Candidates.party}}</td>
+                                    <td>{{politicalParty}}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Offical Website:</th>
-                                    <td>{{Candidates.website}}</td>
+                                    <td><a href={{website}}>{{website}}</a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Current Held Office/Occupation:</th>
-                                    <td>{{Candidates.occupation}}</td>
+                                    <td>{{occupation}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -63,5 +69,6 @@
                 </section>
             </div>
         </div>
+        {{/each}}
     </section>
 </body>
