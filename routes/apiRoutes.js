@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
   // Get all examples
@@ -23,4 +24,13 @@ module.exports = function(app) {
       res.render("candidate", {candidate: req.params.id});
     });
   });
+
+//login
+// Route for logging user out
+app.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
+});
+//
+
 };

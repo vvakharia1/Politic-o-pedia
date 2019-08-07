@@ -1,4 +1,7 @@
 var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+var path = require("path");
+
 
 module.exports = function(app) {
   // Load index page
@@ -16,7 +19,7 @@ module.exports = function(app) {
   // Load example page and pass in an example by id
 
   app.get("/candidates/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbCandidates) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbCandidates) {
       res.render("candidate", {
         Candidate: dbCandidates
       });
@@ -24,7 +27,7 @@ module.exports = function(app) {
   });
 
   //for survey
-  app.get("/survey", function(req, res) {
+  app.get("/survey", isAuthenticated, function(req, res) {
     res.render("survey", {});
   });
   // Render 404 page for any unmatched routes

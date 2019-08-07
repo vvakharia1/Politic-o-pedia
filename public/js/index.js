@@ -113,18 +113,88 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
     return true;
     };
 }; */
-$("#register").on("click", function(event) {
+
+//.....................................................................................
+// register user
+var signUpForm = $("#signup");
+emailInput = $("#register-username")
+passwordInput = $("#register-password")
+
+signUpForm.on("submit", function(event) {
   event.preventDefault();
-  username = $("#register-username").val().trim();
-  password = $("#register-password").val().trim();
-  if (username.length === 0) {
-    console.log("enter something!");
+  var userData = {
+    email: emailInput.val().trim(),
+    password: passwordInput.val().trim()
+  };
+//make sure forms not blank
+  if (!userData.email || !userData.password) {
+    return;
   }
-  if (username.length > 0) {
-    window.location.href = "/survey";
-    console.log("redirecting...");
-  }
+
+  signUpUser(userData.email, userData.password);
+  emailInput.val("");
+  passwordInput.val("");
 });
+
+function signUpUser(email, password) {
+  $.post("/api/signup", {
+    email: email,
+    password: password
+  }).then(function(data) {
+    window.location.replace(data);
+  
+  }).catch(function(err) {
+    console.log(err);
+  });
+}
+//end of reg.....................................................................
+//login logic.....................................................................
+
+var loginForm = $("#login");
+emailInput = $("#login-username")
+passwordInput = $("#login-password")
+
+loginForm.on("submit", function(event) {
+  event.preventDefault();
+  var userData = {
+    email: emailInput.val().trim(),
+    password: passwordInput.val().trim()
+  };
+
+  if (!userData.email || !userData.password) {
+    return;
+  }
+
+  
+loginUser(userData.email, userData.password);
+  emailInput.val("");
+  passwordInput.val("");
+});
+function loginUser(email, password) {
+  $.post("/api/login", {
+    email: email,
+    password: password
+  }).then(function(data) {
+    window.location.replace(data);
+    // If there's an error, log the error
+  }).catch(function(err) {
+    console.log(err);
+  });
+}
+
+//...........................................................................................
+// $("#register").on("click", function(event) {
+//   event.preventDefault();
+//   email = $("#register-username").val().trim();
+//   password = $("#register-password").val().trim();
+//   if (email.length === 0) {
+//     console.log("enter something!");
+//   }
+//   if (email.length > 0) {
+//     window.location.href = "/survey";
+//     console.log("redirecting...");
+//   }
+// });
 
 // For Login and Registration Box
 $("#register-box").hide();
