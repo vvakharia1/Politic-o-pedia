@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Hughlaurie1!",
+    "password": null,
     "database": "politicdb",
     "host": "localhost",
     "port": "3306",
