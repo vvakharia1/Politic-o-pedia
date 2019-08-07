@@ -127,7 +127,7 @@ $("#register").on("click", function(event) {
 });
 
 // For Login and Registration Box
-$("#register-box").hide();
+/* $("#register-box").hide();
 $("#signup").on("click", function(event) {
   event.preventDefault();
   $("#login-box").hide();
@@ -138,7 +138,7 @@ $("#go-back-login").on("click", function(event) {
   event.preventDefault();
   $("#register-box").hide();
   $("#login-box").show();
-});
+}); */
 // For Candidates Page
 
 $("#republican-list").hide();
@@ -156,4 +156,62 @@ $("#republican-button").on("click", function(event) {
   $("#democrat-button").hide();
   $("#republican-button").hide();
   $("#republican-list").show();
+});
+
+// For Candidate Page, Comments
+
+$(function () {
+/*   $(".eat-burger").on("click", function (event) {
+    var id = $(this).data("id");
+    var newEaten = $(this).data("newEaten");
+
+    var newBurgerState = {
+      devoured: true
+    };
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: newBurgerState
+    }).then(
+      function () {
+        console.log("changed devoured to", newEaten);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  }); */
+
+  $("#comment-submit").on("click", function () {
+    var newComment = {
+      commentText : $("#comment-text").val().trim(),
+      name : $("#comment-name").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/comments", {
+      type: "POST",
+      data: newComment
+    }).then(
+      function () {
+        console.log("created new comment");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $(".delete-comment").on("click", function() {
+    console.log("clicked delete");
+    var id = $(this).data("id");
+    // Send the DELETE request.
+    $.ajax("/api/comments/" + id, {
+      type: "DELETE"
+    }).then(
+      function () {
+        console.log("deleted comment", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 });
