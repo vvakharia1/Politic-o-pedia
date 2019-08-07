@@ -13,6 +13,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/register", function (req, res) {
+    res.render("register", {});
+  });
+
   /*   app.get("/comments", function(req,res) {
     db.Comment.findAll({}).then(function(result)) {
       res.render("")

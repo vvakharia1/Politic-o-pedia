@@ -127,7 +127,7 @@ $("#register").on("click", function(event) {
 });
 
 // For Login and Registration Box
-$("#register-box").hide();
+/* $("#register-box").hide();
 $("#signup").on("click", function(event) {
   event.preventDefault();
   $("#login-box").hide();
@@ -138,7 +138,7 @@ $("#go-back-login").on("click", function(event) {
   event.preventDefault();
   $("#register-box").hide();
   $("#login-box").show();
-});
+}); */
 // For Candidates Page
 
 $("#republican-list").hide();
