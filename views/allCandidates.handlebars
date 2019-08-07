@@ -10,15 +10,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class=" navbar-nav ml-auto nav-font">
-    
                     <li class="nav-item active">
                         <a class="nav-link ks-nav" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ks-nav" href="/candidates">View Candidates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ks-nav" href="#survey">Survey</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ks-nav" href="#logout">Logout</a>
@@ -41,10 +37,10 @@
     <section class="container" id="republican-list">
         {{#each Candidates}}
         {{#if isRepublican}}
+        <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-8 border ks-container m-4">
+            <div class="col-md-8 border ks-container m-4 biggerBox">
                 <section class="p-4">
-
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
                             <tbody>
@@ -78,12 +74,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                       
                     </section>
                 </section>
-                
             </div>
         </div>
+        </a>
         {{/if}}
         {{/each}}
     </section>
@@ -91,8 +86,9 @@
     <section class="container" id="democrat-list">
         {{#each Candidates}}
         {{#unless isRepublican}}
+        <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-8 border ks-container m-4">
+            <div class="col-md-8 border ks-container m-4 biggerBox">
                 <section class="p-4">
     
                     <section><img class="image pb-4 pr-4" src={{image}}>
@@ -128,12 +124,11 @@
                                 </tr>
                             </tbody>
                         </table>
-    
                     </section>
                 </section>
-    
             </div>
         </div>
+        </a>
         {{/unless}}
         {{/each}}
     </section>

@@ -1,13 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    username: {
+  var Comment = sequelize.define("Comment", {
+    name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
-    password: {
+    commentText: {
       type: DataTypes.STRING,
       allowNull: false
     }
   });
-  return User;
+  return Comment;
 };
