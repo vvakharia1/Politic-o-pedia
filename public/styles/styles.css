@@ -84,7 +84,7 @@ body {
     z-index: 1;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
-    background: linear-gradient(270deg, rgba(255, 255, 255, .7),  rgba(20, 105, 233, 0.7),rgba(240, 25, 25, 0.7));
+    background: linear-gradient(270deg, rgb(255, 255, 255),  rgba(20, 105, 233, 0.7),rgba(240, 25, 25, 0.7));
 background-size: 600% 600%;
 
 -webkit-animation: AnimationName 30s ease infinite;
@@ -231,4 +231,8 @@ a:hover {
     color: white;
     margin: auto;
     text-align:center;
+}
+        .biggerBox:hover {
+    transform: translateY(-10px) scale(1.03);
+    transition: all 0.7s ease 0s;
 }

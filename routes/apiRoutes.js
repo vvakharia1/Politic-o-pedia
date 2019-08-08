@@ -16,21 +16,38 @@ module.exports = function(app) {
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.findAll({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("candidate", {candidate: req.params.id});
-    });
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json("/candidate");
   });
 
-//login
-// Route for logging user out
-app.get("/logout", function(req, res) {
-  req.logout();
-  res.redirect("/");
-});
-//
+  app.post("/api/signup", function(req, res) {
+    console.log(req.body);
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(function() {
+        res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
 
-};
+
+  app.get("/api/user_data", function(req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
+  });
+}

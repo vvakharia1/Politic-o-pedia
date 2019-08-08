@@ -115,18 +115,25 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 }; */
 
 //.....................................................................................
-// register user
+// register user/////
 var signUpForm = $("#signup");
-emailInput = $("#register-username")
-passwordInput = $("#register-password")
+var emailInput = $("#register-username");
+var passwordInput = $("#register-password");
+
+// $("#register").on("click", function(event) {
+//   // console.log(emailInput)
+//   username = $("#register-username").val().trim();
+//   password = $("#register-password").val().trim();
+// })
 
 signUpForm.on("submit", function(event) {
   event.preventDefault();
+  console.log(emailInput.val().trim());
   var userData = {
     email: emailInput.val().trim(),
     password: passwordInput.val().trim()
   };
-//make sure forms not blank
+    //make sure forms not blank
   if (!userData.email || !userData.password) {
     return;
   }
@@ -140,46 +147,48 @@ function signUpUser(email, password) {
   $.post("/api/signup", {
     email: email,
     password: password
-  }).then(function(data) {
-    window.location.replace(data);
-  
-  }).catch(function(err) {
-    console.log(err);
-  });
+  })
+    .then(function(data) {
+      window.location.href = "/";
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 }
 //end of reg.....................................................................
 //login logic.....................................................................
 
 var loginForm = $("#login");
-emailInput = $("#login-username")
-passwordInput = $("#login-password")
+loginInput = $("#login-username");
+passwordInput1 = $("#login-password");
 
 loginForm.on("submit", function(event) {
   event.preventDefault();
   var userData = {
-    email: emailInput.val().trim(),
-    password: passwordInput.val().trim()
+    email: loginInput.val().trim(),
+    password: passwordInput1.val().trim()
   };
 
   if (!userData.email || !userData.password) {
     return;
   }
 
-  
-loginUser(userData.email, userData.password);
-  emailInput.val("");
-  passwordInput.val("");
+    loginUser(userData.email, userData.password);
+  loginInput.val("");
+  passwordInput1.val("");
 });
 function loginUser(email, password) {
   $.post("/api/login", {
     email: email,
     password: password
-  }).then(function(data) {
-    window.location.replace(data);
-    // If there's an error, log the error
-  }).catch(function(err) {
-    console.log(err);
-  });
+  })
+    .then(function(data) {
+      window.location.href = "/";
+      // If there's an error, log the error
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 }
 
 //...........................................................................................
@@ -197,7 +206,7 @@ function loginUser(email, password) {
 // });
 
 // For Login and Registration Box
-$("#register-box").hide();
+/* $("#register-box").hide();
 $("#signup").on("click", function(event) {
   event.preventDefault();
   $("#login-box").hide();
@@ -208,7 +217,7 @@ $("#go-back-login").on("click", function(event) {
   event.preventDefault();
   $("#register-box").hide();
   $("#login-box").show();
-});
+}); */
 // For Candidates Page
 
 $("#republican-list").hide();
@@ -226,4 +235,62 @@ $("#republican-button").on("click", function(event) {
   $("#democrat-button").hide();
   $("#republican-button").hide();
   $("#republican-list").show();
+});
+
+// For Candidate Page, Comments
+
+$(function() {
+  /*   $(".eat-burger").on("click", function (event) {
+    var id = $(this).data("id");
+    var newEaten = $(this).data("newEaten");
+
+    var newBurgerState = {
+      devoured: true
+    };
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: newBurgerState
+    }).then(
+      function () {
+        console.log("changed devoured to", newEaten);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  }); */
+
+  $("#comment-submit").on("click", function() {
+    var newComment = {
+      commentText: $("#comment-text")
+        .val()
+        .trim(),
+      name: $("#comment-name")
+        .val()
+        .trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/comments", {
+      type: "POST",
+      data: newComment
+    }).then(function() {
+      console.log("created new comment");
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
+
+  $(".delete-comment").on("click", function() {
+    console.log("clicked delete");
+    var id = $(this).data("id");
+    // Send the DELETE request.
+    $.ajax("/api/comments/" + id, {
+      type: "DELETE"
+    }).then(function() {
+      console.log("deleted comment", id);
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
 });
