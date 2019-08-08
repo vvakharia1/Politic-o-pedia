@@ -22,25 +22,41 @@
             </div>
         </nav>
     </header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 m-4">
-                    <section class="p-4 partyIcons">
-                        <i class="fas fa-democrat fa-10x mr-4" id="democrat-button"></i>
-                        <i class="fas fa-republican fa-10x ml-4" id="republican-button"></i>
-                    </section>
+        <div class="container partyButtons">
+            <div class="row justify-content-center">
+                <div class="col-md-6  mt-4">
+                    <span class="partyIcons ">
+                        <span class="card mx-auto text-center demCard" style="width: 18rem;">
+                            <span class="card-body">
+                                <h5 class="card-title">Democrat</h5>
+                                <p class="card-text"><i class="fas fa-democrat fa-10x mr-4 biggerBox" id="democrat-button"></i></i></p>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-md-6  mt-4">
+                    <span class="partyIcons">
+                        <span class="card mx-auto text-center repCard" style="width: 18rem;">
+                            <span class="card-body">
+                                <h5 class="card-title">Republican</h5>
+                                <p class="card-text"><i class="fas fa-republican fa-10x ml-4 biggerBox" id="republican-button"></i></p>
+                            </span>
+                        </span>
+                    </span>
                 </div>
             </div>
         </div>
 
     <!--Each Republican candidate card-->
-    <section class="container" id="republican-list">
-        <a class="twitter-timeline" href="https://twitter.com/GOP?ref_src=twsrc%5Etfw">Tweets by GOP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <section class="container" id="republican-list">   
+
+        <div class="row">
+            <div class="col-md-8">
         {{#each Candidates}}
         {{#if isRepublican}}
         <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-8 border ks-container m-4 biggerBox">
+            <div class="col-md-12 border ks-container m-4 biggerBox">
                 <section class="p-4">
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
@@ -82,17 +98,26 @@
         </a>
         {{/if}}
         {{/each}}
+        </div>
+        <div class="col-md-3 mx-4 my-4">
+           <div class="scrollbar" id="style-1">
+                <a class="twitter-timeline" data-height="450" noscrollbar="false" href="https://twitter.com/GOP?ref_src=twsrc%5Etfw">Tweets by GOP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>        
+        </div>
+        </div>
+        
     </section>
     <!--Each Democrat candidate card-->
     <section class="container" id="democrat-list">
-        <a class="twitter-timeline" href="https://twitter.com/TheDemocrats?ref_src=twsrc%5Etfw">Tweets by TheDemocrats</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+        <div class="row">
+            <div class="col-md-8">
         {{#each Candidates}}
         {{#unless isRepublican}}
         <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-8 border ks-container m-4 biggerBox">
+            <div class="col-md-12 border ks-container m-4 biggerBox">
                 <section class="p-4">
-    
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
                             <tbody>
@@ -133,7 +158,19 @@
         </a>
         {{/unless}}
         {{/each}}
+        </div>
+
+        <div class="col-md-3 mx-4 my-4">
+           <div class="scrollbar" id="style-1">
+                <a class="twitter-timeline" data-height="450" noscrollbar="false" href="https://twitter.com/TheDemocrats?ref_src=twsrc%5Etfw">Tweets by TheDemocrats</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>        
+        </div>
+        </div>
+
+
     </section>
+
+
     <!-- Footer -->
     <footer class=" text-center mt-auto">
         <div class="h-font footerText">© 2019 Politopedia

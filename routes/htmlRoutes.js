@@ -47,7 +47,7 @@ module.exports = function(app) {
   app.get("/candidates/:fullName", function(req, res) {
     db.Candidate.findOne({ where: { fullName: req.params.fullName } }).then(
       function(dbCandidates) {
-        db.Comment.findAll({}).then(function(dbComments) {
+        db.Comment.findAll({ where: { source: req.params.fullName}}).then(function(dbComments) {
           res.render("candidate", {
             Candidate: dbCandidates,
             Comments: dbComments

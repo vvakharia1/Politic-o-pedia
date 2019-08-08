@@ -227,6 +227,7 @@ $("#democrat-button").on("click", function(event) {
   event.preventDefault();
   $("#democrat-button").hide();
   $("#republican-button").hide();
+  $(".partyButtons").hide();
   $("#democrat-list").show();
 });
 
@@ -234,6 +235,7 @@ $("#republican-button").on("click", function(event) {
   event.preventDefault();
   $("#democrat-button").hide();
   $("#republican-button").hide();
+  $(".partyButtons").hide();
   $("#republican-list").show();
 });
 
@@ -262,14 +264,11 @@ $(function() {
 
   $("#comment-submit").on("click", function() {
     var newComment = {
-      commentText: $("#comment-text")
-        .val()
-        .trim(),
-      name: $("#comment-name")
-        .val()
-        .trim()
+      commentText : $("#comment-text").val().trim(),
+      name : $("#comment-name").val().trim(),
+      source: $("#sourceName").text()
     };
-
+    console.log(newComment)
     // Send the POST request.
     $.ajax("/api/comments", {
       type: "POST",
