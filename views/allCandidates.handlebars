@@ -10,15 +10,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class=" navbar-nav ml-auto nav-font">
-    
                     <li class="nav-item active">
                         <a class="nav-link ks-nav" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ks-nav" href="/candidates">View Candidates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ks-nav" href="#survey">Survey</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ks-nav" href="#logout">Logout</a>
@@ -44,10 +40,10 @@
             <div class="col-md-8">
         {{#each Candidates}}
         {{#if isRepublican}}
+        <a href="/candidates/{{fullName}}">
         <div class="row">
             <div class="col-md-12 border ks-container m-4">
                 <section class="p-4">
-
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
                             <tbody>
@@ -81,12 +77,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                       
                     </section>
                 </section>
-                
             </div>
         </div>
+        </a>
         {{/if}}
         {{/each}}
         </div>
@@ -103,6 +98,7 @@
             <div class="col-md-8">
         {{#each Candidates}}
         {{#unless isRepublican}}
+        <a href="/candidates/{{fullName}}">
         <div class="row">
             <div class="col-md-12 border ks-container m-4">
                 <section class="p-4">
@@ -140,12 +136,11 @@
                                 </tr>
                             </tbody>
                         </table>
-    
                     </section>
                 </section>
-    
             </div>
         </div>
+        </a>
         {{/unless}}
         {{/each}}
         </div>
