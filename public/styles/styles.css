@@ -232,7 +232,23 @@ a:hover {
     margin: auto;
     text-align:center;
 }
-        .biggerBox:hover {
+.biggerBox:hover {
     transform: translateY(-10px) scale(1.03);
     transition: all 0.7s ease 0s;
+}
+
+.demCard {
+    background-color: rgba(0, 60, 255, 0.3);
+        border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 0px;
+
+
+}
+.repCard {
+    background-color: rgba(255, 0, 0, 0.3);
+        border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 0px;
+
 }

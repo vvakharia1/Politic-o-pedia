@@ -7,6 +7,10 @@ module.exports = function(sequelize, DataTypes) {
     commentText: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    source: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
   return Comment;

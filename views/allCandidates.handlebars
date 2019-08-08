@@ -22,13 +22,27 @@
             </div>
         </nav>
     </header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 m-4">
-                    <section class="p-4 partyIcons">
-                        <i class="fas fa-democrat fa-10x mr-4" id="democrat-button"></i>
-                        <i class="fas fa-republican fa-10x ml-4" id="republican-button"></i>
-                    </section>
+        <div class="container partyButtons">
+            <div class="row justify-content-center">
+                <div class="col-md-6  mt-4">
+                    <span class="partyIcons ">
+                        <span class="card mx-auto text-center demCard" style="width: 18rem;">
+                            <span class="card-body">
+                                <h5 class="card-title">Democrat</h5>
+                                <p class="card-text"><i class="fas fa-democrat fa-10x mr-4 biggerBox" id="democrat-button"></i></i></p>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-md-6  mt-4">
+                    <span class="partyIcons">
+                        <span class="card mx-auto text-center repCard" style="width: 18rem;">
+                            <span class="card-body">
+                                <h5 class="card-title">Republican</h5>
+                                <p class="card-text"><i class="fas fa-republican fa-10x ml-4 biggerBox" id="republican-button"></i></p>
+                            </span>
+                        </span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -42,7 +56,7 @@
         {{#if isRepublican}}
         <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-12 border ks-container m-4">
+            <div class="col-md-12 border ks-container m-4 biggerBox">
                 <section class="p-4">
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
@@ -102,9 +116,8 @@
         {{#unless isRepublican}}
         <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-12 border ks-container m-4">
+            <div class="col-md-12 border ks-container m-4 biggerBox">
                 <section class="p-4">
-    
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
                             <tbody>
