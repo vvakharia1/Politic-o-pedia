@@ -1,10 +1,18 @@
 var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+var path = require("path");
+
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+    // if (req.user) {
+    //   res.redirect("/survey");
+    // }
     res.render("index", {});
   });
+
+
   app.get("/candidates", function(req, res) {
     db.Candidate.findAll({}).then(function(result) {
       res.render("allCandidates", {
@@ -16,6 +24,8 @@ module.exports = function(app) {
   app.get("/register", function (req, res) {
     res.render("register", {});
   });
+
+  
 
   /*   app.get("/comments", function(req,res) {
     db.Comment.findAll({}).then(function(result)) {
@@ -47,7 +57,7 @@ module.exports = function(app) {
     );
   });
   //for survey
-  app.get("/survey", function(req, res) {
+  app.get("/survey", isAuthenticated, function(req, res) {
     res.render("survey", {});
   });
   // Render 404 page for any unmatched routes
