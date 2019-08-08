@@ -34,13 +34,15 @@
         </div>
 
     <!--Each Republican candidate card-->
-    <section class="container" id="republican-list">
-        <a class="twitter-timeline" href="https://twitter.com/GOP?ref_src=twsrc%5Etfw">Tweets by GOP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <section class="container" id="republican-list">   
+
+        <div class="row">
+            <div class="col-md-8">
         {{#each Candidates}}
         {{#if isRepublican}}
         <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-8 border ks-container m-4 biggerBox">
+            <div class="col-md-12 border ks-container m-4">
                 <section class="p-4">
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
@@ -82,15 +84,23 @@
         </a>
         {{/if}}
         {{/each}}
+        </div>
+         <div class="col-md-4">
+             <a class="twitter-timeline" href="https://twitter.com/GOP?ref_src=twsrc%5Etfw">Tweets by GOP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        </div> 
+        
     </section>
     <!--Each Democrat candidate card-->
     <section class="container" id="democrat-list">
-        <a class="twitter-timeline" href="https://twitter.com/TheDemocrats?ref_src=twsrc%5Etfw">Tweets by TheDemocrats</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+        <div class="row">
+            <div class="col-md-8">
         {{#each Candidates}}
         {{#unless isRepublican}}
         <a href="/candidates/{{fullName}}">
         <div class="row">
-            <div class="col-md-8 border ks-container m-4 biggerBox">
+            <div class="col-md-12 border ks-container m-4">
                 <section class="p-4">
     
                     <section><img class="image pb-4 pr-4" src={{image}}>
@@ -133,7 +143,16 @@
         </a>
         {{/unless}}
         {{/each}}
+        </div>
+        <div class="col-md-4">
+             <a class="twitter-timeline" href="https://twitter.com/TheDemocrats?ref_src=twsrc%5Etfw">Tweets by TheDemocrats</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        </div>
+
+
     </section>
+
+
     <!-- Footer -->
     <footer class=" text-center mt-auto">
         <div class="h-font footerText">© 2019 Politopedia
