@@ -148,6 +148,7 @@ $("#democrat-button").on("click", function(event) {
   event.preventDefault();
   $("#democrat-button").hide();
   $("#republican-button").hide();
+  $(".partyButtons").hide();
   $("#democrat-list").show();
 });
 
@@ -155,6 +156,7 @@ $("#republican-button").on("click", function(event) {
   event.preventDefault();
   $("#democrat-button").hide();
   $("#republican-button").hide();
+  $(".partyButtons").hide();
   $("#republican-list").show();
 });
 
