@@ -186,9 +186,10 @@ $(function () {
   $("#comment-submit").on("click", function () {
     var newComment = {
       commentText : $("#comment-text").val().trim(),
-      name : $("#comment-name").val().trim()
+      name : $("#comment-name").val().trim(),
+      source: $("#sourceName").text()
     };
-
+    console.log(newComment)
     // Send the POST request.
     $.ajax("/api/comments", {
       type: "POST",
