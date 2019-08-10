@@ -36,6 +36,15 @@ body {
 .h-font {
     font-family: 'EB Garamond', serif;
 }
+.title-candidate-name {
+    color: black;
+
+}
+.link-to-ind-page:hover {
+    text-decoration: none;
+    color: black;
+    text-decoration-color: black;
+}
 .title-font {
     font-family: 'Declaration', serif;
     font-size: .5rem;
@@ -62,12 +71,11 @@ body {
 
 .ks-nav {
     font-size: 1.2rem;
-    border-right: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(126, 126, 126);
     padding: 0;
 }
 .ks-nav-email {
     font-size: 1.2rem;
-    border-right: 1px solid rgb(0, 0, 0);
     padding: 0;
     color: rgb(202,202,202);
 }

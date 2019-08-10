@@ -29,11 +29,12 @@
         <div class="row">
             <div class="col-md-12 border ks-container m-4">
                 <section class="p-4">
+                    <h1 class="h-font">{{Candidate.fullName}}</h1>
                     <section><img class="image pb-4 pr-4" src="/{{Candidate.image}}">
                         <table class="table table-candidates">
                             <tbody>
                                 <tr>
-                                    <th scope="row">Name:</th>
+                                    <th scope="row">Full Name:</th>
                                     <td id= "sourceName">{{Candidate.fullName}}</td>
                                 </tr>
                                 <tr>
@@ -67,7 +68,7 @@
             </div>
         </div>
         <div class="col-md-5 ks-container mx-auto p-2 m-3">
-            <h3 class="text-center py-2 mx-auto border-bottom">Debate</h3>
+            <h3 class="text-center py-2 mx-auto border-bottom h-font">Debate</h3>
             <div class="mx-auto">
                 {{#each Comments}}
                 <div class="p-4 ks-com-container mb-2">

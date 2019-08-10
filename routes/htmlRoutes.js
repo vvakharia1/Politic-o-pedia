@@ -2,7 +2,6 @@ var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 var path = require("path");
 
-
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -12,7 +11,6 @@ module.exports = function(app) {
     res.render("index", {});
   });
 
-
   app.get("/candidates", function(req, res) {
     db.Candidate.findAll({}).then(function(result) {
       res.render("allCandidates", {
@@ -21,10 +19,10 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/register", function (req, res) {
+  app.get("/register", function(req, res) {
     res.render("register", {});
   });
-  app.get("/home", function (req, res) {
+  app.get("/home", function(req, res) {
     res.render("index-logged-in", {});
   });
 
@@ -48,12 +46,14 @@ module.exports = function(app) {
   app.get("/candidates/:fullName", function(req, res) {
     db.Candidate.findOne({ where: { fullName: req.params.fullName } }).then(
       function(dbCandidates) {
-        db.Comment.findAll({ where: { source: req.params.fullName}}).then(function(dbComments) {
-          res.render("candidate", {
-            Candidate: dbCandidates,
-            Comments: dbComments
-          });
-        });
+        db.Comment.findAll({ where: { source: req.params.fullName } }).then(
+          function(dbComments) {
+            res.render("candidate", {
+              Candidate: dbCandidates,
+              Comments: dbComments
+            });
+          }
+        );
       }
     );
   });

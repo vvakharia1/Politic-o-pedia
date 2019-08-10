@@ -17,7 +17,7 @@ module.exports = function(app) {
   }); */
 
   // Get a Candidates by id NOT NEEDED
-/*   app.get("/api/candidates/:id", function(req, res) {
+  /*   app.get("/api/candidates/:id", function(req, res) {
     db.Candidate.findOne({ where: { id: req.params.id } }).then(function(dbCandidates) {
       // res.render("candidate", { Candidates: dbCandidates });
       res.send(dbCandidates);
