@@ -36,7 +36,6 @@ module.exports = function(app) {
       });
   });
 
-
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
@@ -50,4 +49,4 @@ module.exports = function(app) {
       });
     }
   });
-}
+};

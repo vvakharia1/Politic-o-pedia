@@ -133,7 +133,7 @@ signUpForm.on("submit", function(event) {
     email: emailInput.val().trim(),
     password: passwordInput.val().trim()
   };
-    //make sure forms not blank
+  //make sure forms not blank
   if (!userData.email || !userData.password) {
     return;
   }
@@ -173,7 +173,7 @@ loginForm.on("submit", function(event) {
     return;
   }
 
-    loginUser(userData.email, userData.password);
+  loginUser(userData.email, userData.password);
   loginInput.val("");
   passwordInput1.val("");
 });
@@ -183,7 +183,7 @@ function loginUser(email, password) {
     password: password
   })
     .then(function(data) {
-      window.location.href = "/";
+      window.location.href = "/home";
       // If there's an error, log the error
     })
     .catch(function(err) {
@@ -191,6 +191,10 @@ function loginUser(email, password) {
     });
 }
 
+$.get("/api/user_data").then(function(data) {
+  $(".logged-in-email").text(data.email);
+  console.log(data.email);
+});
 //...........................................................................................
 // $("#register").on("click", function(event) {
 //   event.preventDefault();
@@ -220,15 +224,16 @@ $("#go-back-login").on("click", function(event) {
 }); */
 // For Candidates Page
 
-$("#republican-list").hide();
-$("#democrat-list").hide();
+//  $("#republican-list").hide();
+// $("#democrat-list").hide();
 
 $("#democrat-button").on("click", function(event) {
   event.preventDefault();
   $("#democrat-button").hide();
   $("#republican-button").hide();
   $(".partyButtons").hide();
-  $("#democrat-list").show();
+  //  $("#democrat-list").show();
+  $("#democrat-list").removeClass("hidden");
 });
 
 $("#republican-button").on("click", function(event) {
@@ -236,7 +241,8 @@ $("#republican-button").on("click", function(event) {
   $("#democrat-button").hide();
   $("#republican-button").hide();
   $(".partyButtons").hide();
-  $("#republican-list").show();
+  // $("#republican-list").show();
+  $("#republican-list").removeClass("hidden");
 });
 
 // For Candidate Page, Comments
@@ -264,11 +270,15 @@ $(function() {
 
   $("#comment-submit").on("click", function() {
     var newComment = {
-      commentText : $("#comment-text").val().trim(),
-      name : $("#comment-name").val().trim(),
+      commentText: $("#comment-text")
+        .val()
+        .trim(),
+      name: $("#comment-name")
+        .val()
+        .trim(),
       source: $("#sourceName").text()
     };
-    console.log(newComment)
+    console.log(newComment);
     // Send the POST request.
     $.ajax("/api/comments", {
       type: "POST",

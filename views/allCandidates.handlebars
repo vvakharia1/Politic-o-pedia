@@ -48,21 +48,22 @@
         </div>
 
     <!--Each Republican candidate card-->
-    <section class="container" id="republican-list">   
+    <section class="container hidden" id="republican-list">   
 
         <div class="row">
             <div class="col-md-8">
         {{#each Candidates}}
         {{#if isRepublican}}
-        <a href="/candidates/{{fullName}}">
+        <a class="link-to-ind-page"href="/candidates/{{fullName}}">
         <div class="row">
             <div class="col-md-12 border ks-container m-4 biggerBox">
                 <section class="p-4">
+                    <h1 class="h-font title-candidate-name ">{{fullName}}</h1>
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
                             <tbody>
                                 <tr>
-                                    <th scope="row">Name:</th>
+                                    <th scope="row">Full Name:</th>
                                     <td>{{fullName}}</td>
                                 </tr>
                                 <tr>
@@ -108,16 +109,16 @@
         
     </section>
     <!--Each Democrat candidate card-->
-    <section class="container" id="democrat-list">
-        
+    <section class="container hidden" id="democrat-list">
         <div class="row">
             <div class="col-md-8">
         {{#each Candidates}}
         {{#unless isRepublican}}
-        <a href="/candidates/{{fullName}}">
+        <a class="link-to-ind-page" href="/candidates/{{fullName}}">
         <div class="row">
             <div class="col-md-12 border ks-container m-4 biggerBox">
                 <section class="p-4">
+                    <h1 class="h-font title-candidate-name ">{{fullName}}</h1>
                     <section><img class="image pb-4 pr-4" src={{image}}>
                         <table class="table table-candidates">
                             <tbody>
@@ -159,18 +160,13 @@
         {{/unless}}
         {{/each}}
         </div>
-
         <div class="col-md-3 mx-4 my-4">
            <div class="scrollbar" id="style-1">
                 <a class="twitter-timeline" data-height="450" noscrollbar="false" href="https://twitter.com/TheDemocrats?ref_src=twsrc%5Etfw">Tweets by TheDemocrats</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>        
         </div>
         </div>
-
-
     </section>
-
-
     <!-- Footer -->
     <footer class=" text-center mt-auto">
         <div class="h-font footerText">© 2019 Politopedia

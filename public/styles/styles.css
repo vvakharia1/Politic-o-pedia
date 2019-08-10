@@ -36,6 +36,15 @@ body {
 .h-font {
     font-family: 'EB Garamond', serif;
 }
+.title-candidate-name {
+    color: black;
+
+}
+.link-to-ind-page:hover {
+    text-decoration: none;
+    color: black;
+    text-decoration-color: black;
+}
 .title-font {
     font-family: 'Declaration', serif;
     font-size: .5rem;
@@ -62,8 +71,13 @@ body {
 
 .ks-nav {
     font-size: 1.2rem;
-    border-right: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(126, 126, 126);
     padding: 0;
+}
+.ks-nav-email {
+    font-size: 1.2rem;
+    padding: 0;
+    color: rgb(202,202,202);
 }
 
 .navbar-nav li:last-child a {
@@ -251,4 +265,19 @@ a:hover {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     padding: 0px;
 
+}
+
+.clear {
+    clear:both;
+}
+
+.ks-com-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 0px;
+}
+
+.hidden {
+    display: none;
 }
