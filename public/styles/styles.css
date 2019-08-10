@@ -65,6 +65,12 @@ body {
     border-right: 1px solid rgb(0, 0, 0);
     padding: 0;
 }
+.ks-nav-email {
+    font-size: 1.2rem;
+    border-right: 1px solid rgb(0, 0, 0);
+    padding: 0;
+    color: rgb(202,202,202);
+}
 
 .navbar-nav li:last-child a {
     border: none;
@@ -251,4 +257,19 @@ a:hover {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     padding: 0px;
 
+}
+
+.clear {
+    clear:both;
+}
+
+.ks-com-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 0px;
+}
+
+.hidden {
+    display: none;
 }

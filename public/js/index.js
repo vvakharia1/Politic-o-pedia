@@ -183,7 +183,7 @@ function loginUser(email, password) {
     password: password
   })
     .then(function(data) {
-      window.location.href = "/";
+      window.location.href = "/home";
       // If there's an error, log the error
     })
     .catch(function(err) {
@@ -191,6 +191,11 @@ function loginUser(email, password) {
     });
 }
 
+
+$.get("/api/user_data").then(function (data) {
+  $(".logged-in-email").text(data.email);
+  console.log(data.email)
+})
 //...........................................................................................
 // $("#register").on("click", function(event) {
 //   event.preventDefault();
@@ -220,15 +225,16 @@ $("#go-back-login").on("click", function(event) {
 }); */
 // For Candidates Page
 
-$("#republican-list").hide();
-$("#democrat-list").hide();
+//  $("#republican-list").hide();
+// $("#democrat-list").hide();
 
 $("#democrat-button").on("click", function(event) {
   event.preventDefault();
   $("#democrat-button").hide();
   $("#republican-button").hide();
   $(".partyButtons").hide();
-  $("#democrat-list").show();
+//  $("#democrat-list").show();
+  $("#democrat-list").removeClass("hidden");
 });
 
 $("#republican-button").on("click", function(event) {
@@ -236,7 +242,8 @@ $("#republican-button").on("click", function(event) {
   $("#democrat-button").hide();
   $("#republican-button").hide();
   $(".partyButtons").hide();
-  $("#republican-list").show();
+ // $("#republican-list").show();
+  $("#republican-list").removeClass("hidden");
 });
 
 // For Candidate Page, Comments
