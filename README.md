@@ -10,11 +10,6 @@ Politic-O-Pedia is a full stack website that shows users the candidates for the 
 ## Instructions
 [Visit this link to try on Heroku](https://politic-o-pedia.herokuapp.com/)
 <br>
-
-### To Use
-Start by registering or loggin in! Then click on the View Candidates tab to see information about the candidates
-
-<img src="./public/assets/img/example.gif" width="800">
  
 ## Built With
 * node.js
